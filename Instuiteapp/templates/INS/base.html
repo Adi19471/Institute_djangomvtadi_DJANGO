@@ -11,9 +11,7 @@
     <title>DJANGOMVTADI::)~</title>
   </head>
   <body>
-  
 
-    
     {% block 'content' %}
     
     <div class="jumbotron d-inline">
@@ -26,27 +24,27 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a></button>
                   </li>
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link text-white" href="{% url 'services' %}">SERVICES</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link text-white" href="{% url 'services' %}">SERVICES</a></button>
                   </li>
     
                   
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link text-white active-link" href="{% url 'gallery' %}">GALLERY</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link text-white active-link" href="{% url 'gallery' %}">GALLERY</a></button>
                   </li>
     
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link text-white" href="{% url 'contact' %}">CONTACT</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link text-white" href="{% url 'contact' %}">CONTACT</a></button>
                   </li>
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link text-white" href="{% url 'feedback' %}">FEEDBACK</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link text-white" href="{% url 'feedback' %}">FEEDBACK</a></button>
                   </li>
                  
                   
                   <li class="nav-item">
-                    <button class="btn btn-info"><a class="nav-link text-white" href="{% url 'mail' %}">MAIL</a></button>
+                    <button class="btn btn-info btn-sm"><a class="nav-link text-white" href="{% url 'mail' %}">MAIL</a></button>
                   </li>
                 </ul>
                 <form class="d-flex">
@@ -56,10 +54,15 @@
               </div>
             </div>
           </nav>
+
+        
     </div>
+
+  
     {% endblock %}
 
-    
+
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>

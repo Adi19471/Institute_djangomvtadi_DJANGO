@@ -1,12 +1,20 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import CourseDetailes
+
+#-------------------------------------------------------------------------------------------------------------
 def home_view(request):
     return render(request,'INS/home.html')
 
 
 def services_view(request):
-    return render(request,'INS/services.html')
+    course_data = CourseDetailes.objects.all()
+    print(course_data)
+
+    context = {
+        'course':course_data
+    }
+    return render(request,'INS/services.html',context)
 
 
 

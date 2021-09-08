@@ -1,7 +1,48 @@
 {% include 'INS/base.html' %}
 
 {% block 'content' %}
+{% load static %}
+<div class="jumbotron">
+    <h1 class="text-center text-success">COURSE DETAILES</h1>
+  </div>
+<table class="table table-striped table-shadow table-hover mt-1">
+    <thead class="bg-info">
+        <tr>
+            <th>COURSENAME</th>
+            <th>COURSEFEES</th>
+            <th>COURSEDATE</th>
+            <th>DURATION</th>
+            <th>TRINERNAME</th>
+            <th>TRINEREXPERIENCE</th>
+            <th>INSTUITEADRESS</th>
+            <th>PROFILE</th>
+        </tr>
+    </thead>
 
-<p>services</p>
+    <tbody class="shadow">
+        {% for i in course %}
+        <tr>
+
+
+            <td> <a href="" class="btn btn-warning btn-sm">{{i.course_name}}</td></a>   
+        
+            <td>{{i.course_fees}}</td>
+            <td>{{i.start_time}}</td>
+            <td><a href="" class="btn btn-danger btn-sm">{{i.duration}}</td></a>
+            <td>{{i.triner_name}}</td>
+            <td>{{i.triner_experiecnce}}</td>
+
+            <td>{{i.Institute_Address}}</td>
+
+            <th><img src="{{ i.profiles.url }}" alt="no images" class="img-thumbnail img-fluid bg-info" width="150px" height="50px"></th>
+            {% endfor %}
+    </tbody>
+</table>
+
+<footer>
+    <div class="jumbotron">
+      <h6 class="text-center text-info">DJANGO DEVELEPER-ADI</h6>
+    </div>
+  </footer>
 
 {% endblock %}
