@@ -1,2 +1,2 @@
+web: gunicorn InstuiteProject.wsgi --log-file=-
 
-web: gunicorn InstuiteProject:app
