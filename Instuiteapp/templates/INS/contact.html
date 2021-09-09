@@ -1,7 +1,100 @@
 {% include 'INS/base.html' %}
+{% load static %}
 
+{% load crispy_forms_tags %}
 {% block 'content' %}
+<style>
 
-<p>CONTACT</p>
+    /* images last dispalu  */
+    .imges{
+        width: 40%;
+        height: 35%;
+        border-radius: 0%;
+    }
+/* side by side images dispalay mpa border */
+    .side-by-side{
+        margin-top: -290px;
+        margin-left: 650px;
+        margin-right: 20px;
+        padding: auto 100px;
+        box-shadow: 1px 1px black cadetblue;
+        line-height: 20px;
+    }
+
+
+    /* form design */
+    form{
+        border: 1px dashed black;
+        font-weight: 800;
+        text-align: justify;
+        text-overflow: ellipsis;
+
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 mt-2 shadow ">
+            <h3 class="alert alert-primary bg-prmary">CONTACT FORM</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{fm | crispy }}
+                <input type="submit" value="submit" class="btn btn-info btn-sm">
+                <input type="reset" value="cancel" class="btn btn-warning btn-sm">
+
+            </form>
+        </div>
+        <!-- instute map location creation -->
+        <div class="col-sm-6">
+            <h6 class="text-dark bg-info alert alert-primary">INSTUITE LOCATION</h6>
+            <div class="jumbotron">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d146930.96162351442!2d78.30982971025651!3d17.474137513728603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d17.484171!2d78.40525199999999!5e0!3m2!1sen!2sin!4v1631216674229!5m2!1sen!2sin"
+                    width="600" height="390" style="border:4px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+    <div class="side-by-side">
+        <div class="container d-inline">
+            <div class="row bg-secondary">
+                <div class="col-sm-4">
+                    <p class="btn btn-outline-info btn-sm text-dark text-justify bg-light">ADDRESS1</p>
+
+                    <img class="imges" src="{% static 'INS/images/naraya.jpg' %}" alt="no-narayna" 
+                    class="img-fluid img-responsive"  >
+                    <h4 class="text-title">NARAYANA</h4>
+                    <dt class="btn btn-warning btn-sm text-center">DJANGO,PYTHON,SQL</dt>
+                    <a href="#" class="btn btn-info btn-sm">Contact No 9010607010</a><br>
+                    <small class="btn btn-danger">18*7 Avaliblity</small><br>
+
+                </div>
+                <div class="col-sm-4">
+                    <p class="btn btn-outline-info btn-sm text-dark text-justify bg-light"> ADDRESS2</p>
+
+                    <img class="imges" src="{% static 'INS/images/institute.jpg' %}" alt="no-narayna"
+                        class="img-fluid img-responsive">
+                    <h4 class="text-title">SRINIVAS</h4>
+                    <dt class="btn btn-warning btn-sm text-center">REST-API,UI</dt>
+                    <a href="#" class="btn btn-info btn-sm">Contact No 8106523410</a><br>
+                    <span class="btn btn-danger">18*7 Avaliblity</span><br>
+
+                </div>
+                <div class="col-sm-4">
+                    <p class="btn btn-outline-info btn-sm text-dark text-justify bg-light">ADDRESS3</p>
+
+                    <img  class="imges"  src="{% static 'INS/images/django-adi.jpj' %}" alt="no-narayna"
+                        class="img-fluid img-responsive img-thumbnail">
+                    <h4 class="text-title">DJANGO-ADI</h4>
+                    <dt class="btn btn-warning btn-sm text-center">DJANGO,UI,COREPYTHON</dt><br>
+                    <a href="#" class="btn btn-info btn-sm">Contact No 9398895448</a><br>
+                    <small class="btn btn-danger">20*7 Avaliblity</small><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

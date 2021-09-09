@@ -1,7 +1,64 @@
+{% load static %}
 {% include 'INS/base.html' %}
 
 {% block 'content' %}
 
-<p>gallery</p>
+<style>
+    .hide{
+        margin-left: 140px;
+        margin-top: -70px;
+        font-size: xx-large;
+        font-weight: 800;
+        font-family: cursive;
+    }
+</style>
+<div class="jumbotron">
+ 
+    <div class="row">
+        <div class="col-sm-6 ">
+            
+                <img src="{% static 'INS/images/djangomvtadi.jpg' %}" alt="No-images" width="470rem" height="600rem"
+                    class="img-fluid img-thumbnail bg-warning shadow my-auto">
+            </div>
+            <div class="col-sm-6 ">
+                <img src="{% static 'INS/images/djangomvsadi.jpg' %}" alt="No-images" width="950rem" height="600rem"
+                class="img-fluid img-thumbnail bg-warning shadow my-auto">
+               
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="jumbotron bg-secondary clearfix">
+    <hr>
+    <div class="row shadow-lg">
+        <div class="col-sm-4">
+            <img src="{% static 'INS/images/django1.jpg' %}" alt="No-images" width="100%" height="100%"
+                class="img-fluid img-thumbnail bg-dark">
+        </div>
+
+        <div class="col-sm-4">
+            <img src="{% static 'INS/images/django2.jpg' %}" alt="No-images" width="100%" height="100%"
+                class="img-fluid img-thumbnail bg-info">
+        </div>
+
+        <div class="col-sm-4">
+            <img src="{% static 'INS/images/django3.jpg' %}" alt="No-images" width="100%" height="100%"
+                class="img-fluid img-thumbnail bg-success">
+        </div>
+    </div>
+
+    <div class="hide">
+        <h3 class="text-white  text-center "><button class="text-dark bg-white text-center">DJANGO-ADI</button> </h3>
+    </div>
+    <hr>
+</div>
+
+
+
+
 
 {% endblock %}

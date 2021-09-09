@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from .models import CourseDetailes
-
+from .models import CourseDetailes,Contact
+from .forms import ContactForm
 #-------------------------------------------------------------------------------------------------------------
 def home_view(request):
     return render(request,'INS/home.html')
@@ -24,7 +24,14 @@ def gallery_view(request):
 
 
 def conatct_view(request):
-    return render(request,'INS/contact.html')
+
+    if request.method =="POST":
+        fm = ContactForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+    else:
+        fm = ContactForm()
+    return render(request,'INS/contact.html',{'fm':fm})
 
 
 
