@@ -1,7 +1,14 @@
 from django.shortcuts import render
 
-from .models import CourseDetailes,Contact
+from .models import CourseDetailes,Contact, Email
 from .forms import ContactForm
+
+
+
+from django.core.mail import message, send_mail
+from InstuiteProject import settings  
+from django.shortcuts import HttpResponse
+from InstuiteProject.settings import EMAIL_HOST_USER
 #-------------------------------------------------------------------------------------------------------------
 def home_view(request):
     return render(request,'INS/home.html')
@@ -40,4 +47,26 @@ def feedback_view(request):
 
 
 def mail_view(request):
-    return render(request,'INS/mail.html')
+
+   if request.method =="POST":
+
+       sub = request.POST.get('name')
+       to = request.POST.get('email')
+       msg = request.POST.get('ms')
+
+       email = Email(name=sub,email=to,message=msg)
+
+       email.save()
+       email = send_mail(sub,msg,EMAIL_HOST_USER,[to])
+
+       print(email)
+       if email:
+           return HttpResponse("sent")
+       else:
+           return HttpResponse("Not sent")
+   return render(request,'INS/mail.html')
+
+
+
+
+

@@ -53,3 +53,17 @@ class Contact(models.Model):
         return self.doute_triner
     
 
+
+class Email(models.Model):
+
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=120)
+    message = models.TextField()
+    
+
+    def __str__(self):
+        return 
+
+    def __unicode__(self):
+        return 
+
