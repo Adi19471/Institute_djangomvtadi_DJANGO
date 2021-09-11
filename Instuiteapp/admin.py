@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import CourseDetailes,Contact,Email
+from .models import CourseDetailes,Contact,EmailData
 
 @admin.register(CourseDetailes)
 class CourseDetailesAdmin(admin.ModelAdmin):
@@ -14,6 +14,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 
-@admin.register(Email)
-class EmailAdmin(admin.ModelAdmin):
-    list_display = ['name','email','message']
+# @admin.register(EmailData)
+# class EmailDataAdmin(admin.ModelAdmin):
+#     list_display = ['name','email','mater']

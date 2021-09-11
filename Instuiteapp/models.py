@@ -54,11 +54,12 @@ class Contact(models.Model):
     
 
 
-class Email(models.Model):
+class EmailData(models.Model):
 
-    name = models.CharField(max_length=200)
-    email = models.EmailField(max_length=120)
-    message = models.TextField()
+    
+    email = models.EmailField(max_length=100)
+    subject = models.CharField(max_length=200)
+    message = models.CharField(max_length=1000,default='something')
     
 
     def __str__(self):
@@ -66,4 +67,6 @@ class Email(models.Model):
 
     def __unicode__(self):
         return 
+
+
 

@@ -8,13 +8,13 @@
             {% csrf_token %}
 <h1 class="alert alert-info text-center">MAIL NOTIFICATION </h1>
             <label for="">Enter Your Name:)</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="subject" class="form-control">
 
             <label for="">Enter Your Email Id:)</label>
             <input type="email" name="email" class="form-control">
 
             <label for="">Enter Your Message:)</label>
-            <textarea name="text" id="" cols="40" rows="1" name="ms" class="form-control"></textarea>
+            <input type="text" name="message" class="form-control">
          
             <input type="submit" value="submit" class="btn btn-info">
             <input type="reset" value="cancel" class="btn btn-danger">

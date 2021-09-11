@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import CourseDetailes,Contact, Email
+from .models import CourseDetailes,Contact,EmailData
 from .forms import ContactForm
 
 
@@ -49,14 +49,12 @@ def feedback_view(request):
 def mail_view(request):
 
    if request.method =="POST":
-
-       sub = request.POST.get('name')
-       to = request.POST.get('email')
-       msg = request.POST.get('ms')
-
-       email = Email(name=sub,email=to,message=msg)
-
-       email.save()
+       sub = request.POST.get('subject')  
+       to = request.POST.get('email') 
+       msg = request.POST.get('message')
+       data = EmailData(email=to,subject=sub,message=msg)
+       
+       data.save()
        email = send_mail(sub,msg,EMAIL_HOST_USER,[to])
 
        print(email)
